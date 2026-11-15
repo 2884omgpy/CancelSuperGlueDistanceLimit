@@ -12,10 +12,22 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(value = SuperGlueSelectionHandler.class, remap = false)
 public class SuperGlueSelectionHandlerMixin
 {
-    @Redirect(method = "tick", remap = false, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/AABB;inflate(DDD)Lnet/minecraft/world/phys/AABB;"))
-    private AABB customSuperGlueSearchRangeLimit(AABB box, double x, double y, double z)
+    @ModifyConstant(method = "tick", constant = @Constant(doubleValue = 32.0D, ordinal = 0), remap = false)
+    private double searchX(double original)
     {
-        return box.inflate(CommonConfig.SEARCH_X.get(), CommonConfig.SEARCH_Y.get(), CommonConfig.SEARCH_Z.get());
+        return CommonConfig.SEARCH_X.get();
+    }
+
+    @ModifyConstant(method = "tick", constant = @Constant(doubleValue = 16.0D, ordinal = 0), remap = false)
+    private double searchY(double original)
+    {
+        return CommonConfig.SEARCH_Y.get();
+    }
+
+    @ModifyConstant(method = "tick", constant = @Constant(doubleValue = 32.0D, ordinal = 1), remap = false)
+    private double searchZ(double original)
+    {
+        return CommonConfig.SEARCH_Z.get();
     }
 
     @ModifyConstant(method = "tick", constant = @Constant(doubleValue = 24.0D, ordinal = 0), remap = false)
