@@ -2,12 +2,9 @@ package com._2884omgpy.cancel_super_glue_distance_limit.mixin;
 
 import com._2884omgpy.cancel_super_glue_distance_limit.CommonConfig;
 import com.simibubi.create.content.contraptions.glue.SuperGlueSelectionHandler;
-import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(value = SuperGlueSelectionHandler.class, remap = false)
 public class SuperGlueSelectionHandlerMixin
