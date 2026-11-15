@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "com._2884omgpy.cancel_super_glue_distance_limit.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "cancel_super_glue_distance_limit.refmap.json",
+  "mixins":
+  [
+    "SuperGlueSelectionPacketMixin",
+    "SuperGlueRemovalPacketMixin",
+    "SuperGlueEntityMixin"
+  ],
+  "client":
+  [
+    "SuperGlueSelectionHandlerMixin"
+  ],
+  "server": [],
+  "injectors":
+  {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
